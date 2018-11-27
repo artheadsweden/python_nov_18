@@ -2,7 +2,7 @@ from functools import wraps
 
 def tagit(pre_tag, post_tag):
     def dec_func(f):
-        wraps(f)
+        @wraps(f)
         def wrapper(greet, name):
             return pre_tag + f(greet, name) + post_tag
         return wrapper
